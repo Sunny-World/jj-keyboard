@@ -1,6 +1,8 @@
 # jj-keyboard
 js监听键盘的快捷键
 
+- [文档地址](https://javison666.github.io/jj-keyboard/)
+
 ## 引用办法：
 ```js
 import jjKeyboard from "./dist/index.js";
