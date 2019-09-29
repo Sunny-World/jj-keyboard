@@ -5,7 +5,7 @@ js监听键盘的快捷键
 
 ## 引用办法：
 ```js
-import jjKeyboard from "./dist/index.js";
+import jjKeyboard from "jj-keyboard";
 ```
 ```html
 <script src="./common/jjKeyboard.js"></script>
