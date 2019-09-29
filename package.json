@@ -1,0 +1,17 @@
+{
+    "name": "jj-keyboard",
+    "version": "1.0.0",
+    "description": "easy to use shoutcut keyboards",
+    "author": "Javison <web_jwq@163.com> (https://www.jiweiqing.cn/)",
+    "main": "./dist/index.js",
+    "types": "./dist/types/index.d.ts",
+    "private": false,
+    "scripts": {
+        "dev": "tsc && webpack --watch",
+        "build": "tsc && webpack"
+    },
+    "keywords": [
+        "typescript",
+        "js"
+    ]
+}
