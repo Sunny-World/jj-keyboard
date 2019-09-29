@@ -22,10 +22,11 @@ module.exports = {
         vdt: "./dist/index.js"
     },
     output: {
-        filename: "[name].js", // 生成的fiename需要与package.json中的main一致
+        filename: "jjKeyboard.js", // 生成的fiename需要与package.json中的main一致
+        // filename: "[name].js", // 生成的fiename需要与package.json中的main一致
         path: path.resolve(__dirname, "common"),
         libraryTarget: "window"
-        // library: 'vdt'
+        // library: "jjKeyboard"
     },
     module: {
         rules: []
