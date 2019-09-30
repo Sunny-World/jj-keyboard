@@ -1,7 +1,7 @@
 # jj-keyboard
 js监听键盘的快捷键
 
-- [文档地址](https://javison666.github.io/jj-keyboard/)
+- [文档地址](https://sunny-world.github.io/jj-keyboard/)
 
 ## 引用办法：
 ```js
@@ -30,3 +30,7 @@ jjKeyboard.delTarget("Control+A")
 //  取消监听器
 jjKeyboard.destroy()
 ```
+
+## 请我喝杯果汁呗～
+
+![Image text](https://github.com/sunny-world/jj-keyboard/blob/master/image/alipay.jpg?raw=true)![Image text](https://github.com/sunny-world/jj-keyboard/blob/master/image/wechat.jpg?raw=true)
