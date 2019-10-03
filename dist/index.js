@@ -10,12 +10,28 @@ var jjKey = {
     },
     isConsole: false,
     target: {},
-    delTarget: function (key) {
+    catch: function (str, fn) {
+        jjKey.target[str] = function (event) {
+            fn(event);
+        };
+    },
+    defaultCatch: function (str, fn) {
+        jjKey.target[str] = function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+            fn(event);
+        };
+    },
+    delCatch: function (key) {
         if (jjKey.target[key] !== undefined) {
             delete jjKey.target[key];
         }
     },
-    delAllTarget: function () {
+    delAllCatch: function () {
         jjKey.target = {};
     },
     /**
@@ -126,7 +142,7 @@ var jjKey = {
             console.log(jjKey.REALKEYS.join("+"));
         }
         if (typeof jjKey.target[jjKey.REALKEYS.join("+")] === "function") {
-            jjKey.target[jjKey.REALKEYS.join("+")]();
+            jjKey.target[jjKey.REALKEYS.join("+")](event);
         }
         return;
     },

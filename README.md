@@ -20,12 +20,24 @@ jjKeyboard.init();
 jjKeyboard.isConsole = true  
 
 // 注入监听按键
-jjKeyboard.target["Control+A"] = () => {
+jjKeyboard.target["Control+A"] = (event) => {
     alert("success");
 };
+// 或者
+jjKeyboard.catch("Control+S", event => {
+    alert(123);
+});
+
+// 取消快捷键的默认时间
+jjKeyboard.defaultCatch("Control+S", event => {
+    alert(123);
+});
 
 // 删除监听按键
-jjKeyboard.delTarget("Control+A")
+jjKeyboard.delCatch("Control+A")
+
+// 删除全部监听按键
+jjKeyboard.delAllCatch()
 
 //  取消监听器
 jjKeyboard.destroy()

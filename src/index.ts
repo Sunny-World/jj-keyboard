@@ -12,12 +12,27 @@ const jjKey: jjKeyStru = {
     },
     isConsole: false,
     target: {},
-    delTarget: key => {
+    catch: (str, fn) => {
+        jjKey.target[str] = (event) => {
+            fn(event)
+        };
+    },
+    defaultCatch: (str, fn) => {
+        jjKey.target[str] = (event) => {
+            if (event.preventDefault) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
+            fn(event)
+        };
+    },
+    delCatch: key => {
         if (jjKey.target[key] !== undefined) {
             delete jjKey.target[key];
         }
     },
-    delAllTarget: () => {
+    delAllCatch: () => {
         jjKey.target = {};
     },
     /**
@@ -130,7 +145,7 @@ const jjKey: jjKeyStru = {
             console.log(jjKey.REALKEYS.join("+"));
         }
         if (typeof jjKey.target[jjKey.REALKEYS.join("+")] === "function") {
-            jjKey.target[jjKey.REALKEYS.join("+")]();
+            jjKey.target[jjKey.REALKEYS.join("+")](event);
         }
         return;
     },
@@ -165,7 +180,6 @@ const jjKey: jjKeyStru = {
 // jjKey.target["A+S+D"] = () => {
 //     alert("fail");
 // };
-// jjKey.delTarget("");
 
 // add the function to prevent the browser's default behavior
 
