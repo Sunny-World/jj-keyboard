@@ -3,10 +3,17 @@ js监听键盘的快捷键
 
 - [文档地址](https://sunny-world.github.io/jj-keyboard/)
 
-## 引用办法：
+## 安装办法：
+```js
+npm i jj-keyboard
+```
+
+进行引用
 ```js
 import jjKeyboard from "jj-keyboard";
 ```
+
+或者外链方法
 ```html
 <script src="./common/jjKeyboard.js"></script>
 ```
@@ -28,7 +35,7 @@ jjKeyboard.catch("Control+S", event => {
     alert(123);
 });
 
-// 取消快捷键的默认时间
+// 取消快捷键的默认事件
 jjKeyboard.defaultCatch("Control+S", event => {
     alert(123);
 });
